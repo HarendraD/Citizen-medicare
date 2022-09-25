@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="doctorContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DoctorFormController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <AnchorPane prefHeight="69.0" prefWidth="1280.0" style="-fx-background-color: #78f1f5;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="1151.0" layoutY="14.0" onMouseClicked="#logOutOnAction" prefHeight="42.0" prefWidth="115.0" style="-fx-background-radius: 50; -fx-background-color: #ff0000;" text="Log Out">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView glyphName="POWER_OFF" layoutX="1164.0" layoutY="48.0" onMouseClicked="#logOutOnAction" size="30" />
+                  <Label layoutX="123.0" layoutY="2.0" prefHeight="63.0" prefWidth="446.0" text="CITIZENS MEDICARE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="38.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="lblTime" alignment="CENTER" layoutX="963.0" layoutY="12.0" prefHeight="35.0" prefWidth="128.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" alignment="CENTER" layoutX="770.0" layoutY="12.0" prefHeight="35.0" prefWidth="159.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView disable="true" fitHeight="74.0" fitWidth="87.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="1178.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="643.0" prefWidth="1280.0" style="-fx-background-color: #cbf3f5;" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tblPatients" layoutX="38.0" layoutY="175.0" prefHeight="460.0" prefWidth="1191.0" stylesheets="@../lib/css/table1.css">
+                    <columns>
+                      <TableColumn fx:id="colPatientId" prefWidth="161.0" text="Patient ID" />
+                      <TableColumn fx:id="colPatientName" minWidth="0.0" prefWidth="254.0" text="Patient Name" />
+                        <TableColumn fx:id="colAddress" minWidth="0.0" prefWidth="323.0" text="Address" />
+                        <TableColumn fx:id="colBp" minWidth="0.0" prefWidth="248.0" text="Blood Pressure" />
+                        <TableColumn fx:id="colTemp" minWidth="0.0" prefWidth="204.0" text="Body Temperature(C')" />
+                    </columns>
+                  </TableView>
+                  <JFXTextField fx:id="txtSearchPatient" layoutX="38.0" layoutY="104.0" onKeyPressed="#searchPatientOnAction" onKeyReleased="#searchPatientOnAction" onKeyTyped="#searchPatientOnAction" prefHeight="39.0" prefWidth="354.0" promptText="Search Patient" style="-fx-border-radius: 20; -fx-border-color: #011e1f;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label fx:id="lblDoctorId" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="59.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="938.0" layoutY="25.0" prefHeight="47.0" prefWidth="247.0" text="Pending Appointments :-">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblAppointmentCount" layoutX="1185.0" layoutY="25.0" prefHeight="48.0" prefWidth="44.0" text="001">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="617.0" fitWidth="674.0" layoutX="297.0" layoutY="12.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/doctorFormFinal.jpg.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

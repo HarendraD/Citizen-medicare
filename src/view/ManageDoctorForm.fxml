@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadContext" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageDotorFormController">
+   <children>
+      <AnchorPane prefHeight="66.0" prefWidth="1280.0">
+         <children>
+            <AnchorPane prefHeight="60.0" prefWidth="1280.0" style="-fx-background-color: #78f1f5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label layoutX="176.0" layoutY="6.0" prefHeight="49.0" prefWidth="464.0" text="CITIZENS MEDICARE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="40.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="lblTime" alignment="CENTER" layoutX="1087.0" layoutY="13.0" prefHeight="35.0" prefWidth="159.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" alignment="CENTER" layoutX="874.0" layoutY="13.0" prefHeight="35.0" prefWidth="205.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="74.0" layoutX="27.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="223.0" layoutY="60.0" prefHeight="660.0" prefWidth="1057.0" style="-fx-border-color: #F8EFBA; -fx-background-color: #7efff5;">
+         <children>
+            <Label alignment="CENTER" layoutX="351.0" layoutY="22.0" prefHeight="43.0" prefWidth="355.0" text="Manage Doctors">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#b81499" />
+                        <Stop color="#0e41da" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <TableView fx:id="tblDoctors" layoutX="18.0" layoutY="153.0" prefHeight="475.0" prefWidth="811.0" stylesheets="@../lib/css/table2.css">
+              <columns>
+                <TableColumn fx:id="colDoctorId" prefWidth="121.0" text="Doctor ID" />
+                <TableColumn fx:id="colName" prefWidth="137.0" text="Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="204.0" text="Address" />
+                  <TableColumn fx:id="colContactNumber" prefWidth="182.0" text="Contact Number" />
+                  <TableColumn fx:id="colSpecialityType" prefWidth="166.0" text="Speciality Type" />
+              </columns>
+            </TableView>
+            <AnchorPane layoutX="839.0" layoutY="179.0" prefHeight="66.0" prefWidth="205.0" style="-fx-border-color: white; -fx-border-radius: 10; -fx-background-color: #32ff7e; -fx-border-width: 2;">
+               <children>
+                  <JFXButton layoutX="69.0" layoutY="4.0" onMouseClicked="#openAddDoctorForm" prefHeight="54.0" prefWidth="133.0" text="Add Doctor">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="49.0" fitWidth="54.0" layoutX="38.0" layoutY="9.0" onMouseClicked="#openAddDoctorForm" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/AddDoctor.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="839.0" layoutY="311.0" prefHeight="66.0" prefWidth="205.0" style="-fx-border-color: white; -fx-border-radius: 10; -fx-background-color: #32ff7e; -fx-border-width: 2;">
+               <children>
+                  <JFXButton layoutX="88.0" layoutY="6.0" onMouseClicked="#openUpdateDoctorForm" prefHeight="54.0" prefWidth="93.0" text="Update">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="49.0" fitWidth="58.0" layoutX="45.0" layoutY="9.0" onMouseClicked="#openUpdateDoctorForm" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/modifyEdit.jpg.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="839.0" layoutY="444.0" prefHeight="66.0" prefWidth="205.0" style="-fx-border-color: white; -fx-border-radius: 10; -fx-background-color: #f23a3a; -fx-border-width: 2;">
+               <children>
+                  <JFXButton layoutX="77.0" layoutY="6.0" onMouseClicked="#deleteDoctor" prefHeight="54.0" prefWidth="104.0" text="Delete">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="49.0" fitWidth="54.0" layoutX="53.0" layoutY="9.0" onMouseClicked="#deleteDoctor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/deleteLogo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="636.0" fitWidth="651.0" layoutX="144.0" layoutY="10.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/DoctorBAck.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane2" layoutY="60.0" prefHeight="660.0" prefWidth="223.0" style="-fx-background-color: #a1d0f7;">
+         <children>
+            <VBox layoutX="49.0" layoutY="18.0" prefHeight="571.0" prefWidth="125.0" spacing="20.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="18.0">
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" onMouseClicked="#openHomeForm" prefHeight="54.0" prefWidth="193.0" text="Home">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="30.0" onMouseClicked="#openManageDoctorForm" prefHeight="53.0" prefWidth="195.0" text="Doctors">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="123.0" onMouseClicked="#openManageNurseForm" prefHeight="53.0" prefWidth="196.0" text="Nurses">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="196.0" onMouseClicked="#openManageMedicineForm" prefHeight="53.0" prefWidth="201.0" text="Medicines">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="269.0" onMouseClicked="#openReportsForm" prefHeight="53.0" prefWidth="194.0" text="Reports">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="342.0" onMouseClicked="#openManageUsers" prefHeight="53.0" prefWidth="198.0" text="Users">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="441.0" onMouseClicked="#logOutButton" prefHeight="53.0" prefWidth="198.0" text="Exit">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="488.0" prefWidth="74.0" AnchorPane.topAnchor="22.0">
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openHomeForm" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/dashBoardImages/i/home.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageDoctorForm" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/dashBoardImages/i/ManageDoctorLogo.jpg.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageNurseForm" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/dashBoardImages/i/nurseLogo.jpg.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageMedicineForm" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/dashBoardImages/i/medicineLogo.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openReportsForm" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/dashBoardImages/i/reportsLogo.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageUsers" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/manageUsersEdit.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="51.0" layoutX="26.0" layoutY="445.0" onMouseClicked="#logOutButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/dashBoardImages/i/logOutLogo.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <ImageView fitHeight="66.0" fitWidth="106.0" layoutX="68.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/LogoFinal.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

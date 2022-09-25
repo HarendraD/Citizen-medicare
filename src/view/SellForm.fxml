@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadContext" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SellFormController">
+   <children>
+      <BorderPane layoutX="31.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="660.0" prefWidth="1071.0" style="-fx-background-color: #e8f6fa; -fx-border-color: #241393; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <children>
+                  <Label layoutX="434.0" layoutY="13.0" prefHeight="47.0" prefWidth="201.0" text="Order Details">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#f328f7" />
+                              <Stop color="#300ec4" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <JFXComboBox fx:id="cmbPatientId" labelFloat="true" layoutX="48.0" layoutY="108.0" prefHeight="37.0" prefWidth="143.0" promptText="Patient ID" AnchorPane.bottomAnchor="513.0" AnchorPane.topAnchor="108.0" />
+                  <JFXTextField fx:id="txtPatientName" labelFloat="true" layoutX="226.0" layoutY="106.0" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="37.0" prefWidth="195.0" promptText="Patient Name" AnchorPane.bottomAnchor="513.0" AnchorPane.topAnchor="108.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="cmbMedicineId" labelFloat="true" layoutX="447.0" layoutY="107.0" prefHeight="37.0" prefWidth="153.0" promptText="Medicine ID" AnchorPane.bottomAnchor="513.0" AnchorPane.topAnchor="108.0" />
+                  <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="640.0" layoutY="106.0" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="37.0" prefWidth="177.0" promptText="Description" AnchorPane.bottomAnchor="513.0" AnchorPane.topAnchor="108.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtQtyOnStock" labelFloat="true" layoutX="59.0" layoutY="185.0" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="37.0" prefWidth="152.0" promptText="Qty On Stock" AnchorPane.bottomAnchor="434.0" AnchorPane.topAnchor="185.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtQtyNeed" labelFloat="true" layoutX="461.0" layoutY="185.0" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="37.0" prefWidth="146.0" promptText="Qty Need" AnchorPane.bottomAnchor="434.0" AnchorPane.topAnchor="185.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="251.0" layoutY="185.0" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="37.0" prefWidth="173.0" promptText="Price" AnchorPane.bottomAnchor="434.0" AnchorPane.topAnchor="185.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnAddCart" alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="681.0" layoutY="183.0" onMouseClicked="#addToTable" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: #40f58e;" text="Save Draft" underline="true">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="896.0" layoutY="183.0" onMouseClicked="#clearSlectedItem" prefHeight="44.0" prefWidth="106.0" style="-fx-background-color: #d40404;" text="Clear" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="tblBill" layoutX="48.0" layoutY="249.0" prefHeight="308.0" prefWidth="955.0" stylesheets="@../lib/css/table2.css">
+                    <columns>
+                      <TableColumn fx:id="colMedicineId" prefWidth="139.0" text="Medicine ID" />
+                      <TableColumn fx:id="colDescription" prefWidth="162.0" text="Description" />
+                        <TableColumn fx:id="colSize" prefWidth="162.0" text="Size(ml/mg)" />
+                        <TableColumn fx:id="colPrice" prefWidth="162.0" text="Price" />
+                        <TableColumn fx:id="colQty" prefWidth="166.0" text="Qty" />
+                        <TableColumn fx:id="colTotalPrice" prefWidth="163.0" text="Total Price" />
+                    </columns>
+                  </TableView>
+                  <JFXTextField fx:id="txtSize" labelFloat="true" layoutX="847.0" layoutY="106.0" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="39.0" prefWidth="152.0" promptText="Size(ml/mg)" AnchorPane.bottomAnchor="513.0" AnchorPane.topAnchor="108.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <FontAwesomeIconView glyphName="SAVE" layoutX="692.0" layoutY="215.0" onMouseClicked="#addToTable" size="30" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="TRASH" layoutX="902.0" layoutY="215.0" onMouseClicked="#clearSlectedItem" size="30" />
+                  <Label fx:id="lblSubTotal" alignment="CENTER" layoutX="843.0" layoutY="578.0" prefHeight="50.0" prefWidth="162.0" text="0000.00" underline="true">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" focusAngle="-142.13" radius="0.5">
+                           <stops>
+                              <Stop color="#bf15b1" />
+                              <Stop color="#bf197a" offset="0.40196078431372556" />
+                              <Stop color="#a719bf" offset="0.630718954248366" />
+                              <Stop color="#d41111" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="640.0" layoutY="578.0" prefHeight="50.0" prefWidth="218.0" text="Sub Total RS:-" underline="true">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#bf15b1" />
+                              <Stop color="#3c19bf" offset="0.40196078431372556" />
+                              <Stop color="#17bf2c" offset="0.630718954248366" />
+                              <Stop color="#1130d6" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="lblOrderId" layoutX="14.0" layoutY="14.0" prefHeight="44.0" prefWidth="98.0" underline="true">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#bf15b1" />
+                              <Stop color="#061438" offset="0.21895424836601307" />
+                              <Stop color="#681446" offset="0.40196078431372556" />
+                              <Stop color="#051439" offset="0.630718954248366" />
+                              <Stop color="#d41111" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="81.0" layoutY="581.0" onMouseClicked="#placeOrder" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: #40f58e;" text="Procced" underline="true">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView glyphName="SAVE" layoutX="94.0" layoutY="613.0" onMouseClicked="#placeOrder" size="30" />
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane fx:id="pane1" prefHeight="60.0" prefWidth="1272.0" style="-fx-background-color: #78f1f5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="176.0" layoutY="6.0" prefHeight="49.0" prefWidth="464.0" text="CITIZENS MEDICARE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="40.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="lblTime" alignment="CENTER" layoutX="1087.0" layoutY="13.0" prefHeight="35.0" prefWidth="159.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" alignment="CENTER" layoutX="874.0" layoutY="13.0" prefHeight="35.0" prefWidth="205.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="74.0" layoutX="27.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="pane2" prefHeight="660.0" prefWidth="226.0" style="-fx-background-color: #edffab; -fx-border-color: #7484dd; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="327.0" prefWidth="81.0" spacing="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+                     <children>
+                        <ImageView fitHeight="59.0" fitWidth="62.0" onMouseClicked="#openPharmacistForm" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../assets/dashboard.jpg-1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#openSellMedicineForm" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../assets/sellMedicine.jpg.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="10.0" layoutY="109.0" onMouseClicked="#logOutOnAction" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/logOutLogo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="73.0" layoutY="25.0" prefHeight="327.0" prefWidth="150.0" spacing="20.0">
+                     <children>
+                        <JFXButton alignment="BASELINE_LEFT" onMouseClicked="#openPharmacistForm" prefHeight="62.0" prefWidth="139.0" text="Dashboard" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="15.0" layoutY="20.0" onMouseClicked="#openSellMedicineForm" prefHeight="62.0" prefWidth="139.0" text="Order Details" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="112.0" onMouseClicked="#logOutOnAction" prefHeight="62.0" prefWidth="137.0" text="Exit" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="182.0" fitWidth="200.0" layoutX="10.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

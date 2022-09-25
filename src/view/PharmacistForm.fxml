@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadContext" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PharmacistFormController">
+   <children>
+      <BorderPane layoutX="31.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="660.0" prefWidth="1071.0" style="-fx-background-color: #e8f6fa; -fx-border-color: #241393; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <children>
+                  <HBox layoutX="53.0" layoutY="14.0" prefHeight="136.0" prefWidth="945.0" spacing="20.0">
+                     <children>
+                        <AnchorPane prefHeight="115.0" prefWidth="298.0" style="-fx-background-color: white; -fx-border-color: #aef2e6; -fx-background-radius: 15; -fx-border-width: 2; -fx-border-radius: 15;">
+                           <children>
+                              <ImageView fitHeight="100.0" fitWidth="141.0" layoutX="98.0" layoutY="11.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/dashBoardImages/i/medicineLogo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" layoutX="9.0" layoutY="11.0" prefHeight="47.0" prefWidth="278.0" text="Count of Medicine Sold" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#a11818" />
+                                          <Stop color="#4929d6" offset="0.326797385620915" />
+                                          <Stop color="#c92ad4" offset="0.6241830065359477" />
+                                          <Stop color="#2f00ff" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label fx:id="lblSoldMedicineCount" alignment="CENTER" layoutX="67.0" layoutY="61.0" prefHeight="45.0" prefWidth="163.0">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#a11818" />
+                                          <Stop color="#4929d6" offset="0.326797385620915" />
+                                          <Stop color="#c92ad4" offset="0.6241830065359477" />
+                                          <Stop color="#2f00ff" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="115.0" prefWidth="298.0" style="-fx-background-color: white; -fx-border-color: #aef2e6; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;">
+                           <children>
+                              <ImageView fitHeight="84.0" fitWidth="89.0" layoutX="193.0" layoutY="15.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/customer.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" layoutX="16.0" layoutY="7.0" prefHeight="30.0" prefWidth="261.0" text="Count of Orders" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#a11818" />
+                                          <Stop color="#4929d6" offset="0.326797385620915" />
+                                          <Stop color="#c92ad4" offset="0.6241830065359477" />
+                                          <Stop color="#2f00ff" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label fx:id="lblCountOfOrders" alignment="CENTER" layoutX="100.0" layoutY="57.0" prefHeight="55.0" prefWidth="93.0">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#a11818" />
+                                          <Stop color="#4929d6" offset="0.326797385620915" />
+                                          <Stop color="#c92ad4" offset="0.6241830065359477" />
+                                          <Stop color="#2f00ff" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="115.0" prefWidth="298.0" style="-fx-background-color: white; -fx-border-color: #aef2e6; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;">
+                           <children>
+                              <ImageView fitHeight="108.0" fitWidth="105.0" layoutX="184.0" layoutY="5.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/income.jpg.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" layoutX="59.0" layoutY="5.0" prefHeight="47.0" prefWidth="188.0" text="Income" underline="true">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#a11818" />
+                                          <Stop color="#4929d6" offset="0.326797385620915" />
+                                          <Stop color="#c92ad4" offset="0.6241830065359477" />
+                                          <Stop color="#2f00ff" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label fx:id="lblIncome" alignment="CENTER" layoutX="89.0" layoutY="52.0" prefHeight="57.0" prefWidth="190.0">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#a11818" />
+                                          <Stop color="#4929d6" offset="0.326797385620915" />
+                                          <Stop color="#c92ad4" offset="0.6241830065359477" />
+                                          <Stop color="#2f00ff" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <ImageView fitHeight="108.0" fitWidth="105.0" layoutX="7.0" layoutY="5.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/income.jpg.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblCountOfOrders1" alignment="CENTER_RIGHT" layoutX="26.0" layoutY="53.0" prefHeight="55.0" prefWidth="67.0" text="RS:-">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#a11818" />
+                                          <Stop color="#4929d6" offset="0.326797385620915" />
+                                          <Stop color="#c92ad4" offset="0.6241830065359477" />
+                                          <Stop color="#2f00ff" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <AnchorPane layoutX="526.0" layoutY="150.0" prefHeight="500.0" prefWidth="500.0" style="-fx-border-color: #d6f3ff; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 3;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="155.0">
+                     <children>
+                        <TableView fx:id="tblMedicine" accessibleRole="TABLE_ROW" depthTest="DISABLE" layoutX="16.0" layoutY="146.0" prefHeight="335.0" prefWidth="488.0" style="-fx-background-color: #b8eef2;" stylesheets="@../lib/css/table2.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="143.0">
+                          <columns>
+                            <TableColumn fx:id="colMedicineId" prefWidth="99.0" text="Medicine ID" />
+                            <TableColumn fx:id="colDescription" prefWidth="166.0" text="Description" />
+                              <TableColumn fx:id="colStock" prefWidth="101.0" text="Stock" />
+                              <TableColumn fx:id="colQtyOfSell" prefWidth="107.0" text="Qty Of Sell" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField fx:id="txtSearchMedicine" labelFloat="true" layoutX="13.0" layoutY="76.0" onKeyReleased="#searchMedicine" onKeyTyped="#searchMedicine" prefHeight="38.0" prefWidth="244.0" promptText="Search Medicine">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label alignment="CENTER" layoutX="140.0" prefHeight="48.0" prefWidth="221.0" text="Medicine Details" underline="true">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="16.0" layoutY="161.0" prefHeight="487.0" prefWidth="517.0" style="-fx-border-color: #d6f3ff; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 3;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="155.0">
+                     <children>
+                        <TableView fx:id="tblOrders" accessibleRole="TABLE_ROW" depthTest="DISABLE" layoutX="9.0" layoutY="164.0" prefHeight="281.0" prefWidth="488.0" style="-fx-background-color: #b8eef2;" stylesheets="@../lib/css/table3.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="140.0">
+                           <columns>
+                              <TableColumn fx:id="colOrderId" prefWidth="106.0" text="Order ID" />
+                              <TableColumn fx:id="colPatientName" prefWidth="161.0" text="Customer Name" />
+                              <TableColumn fx:id="colTotal" prefWidth="113.0" text="Total " />
+                              <TableColumn fx:id="colTime" prefWidth="110.0" text="Time" />
+                           </columns>
+                        </TableView>
+                        <Label alignment="CENTER" layoutX="153.0" layoutY="23.0" prefHeight="48.0" prefWidth="221.0" text="Order Details" underline="true">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane fx:id="pane1" prefHeight="60.0" prefWidth="1272.0" style="-fx-background-color: #78f1f5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="176.0" layoutY="6.0" prefHeight="49.0" prefWidth="464.0" text="CITIZENS MEDICARE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="40.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="lblTime" alignment="CENTER" layoutX="1087.0" layoutY="13.0" prefHeight="35.0" prefWidth="159.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" alignment="CENTER" layoutX="874.0" layoutY="13.0" prefHeight="35.0" prefWidth="205.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="74.0" layoutX="27.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="pane2" prefHeight="660.0" prefWidth="229.0" style="-fx-background-color: #edffab; -fx-border-color: #7484dd; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="327.0" prefWidth="81.0" spacing="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+                     <children>
+                        <ImageView fitHeight="59.0" fitWidth="62.0" onMouseClicked="#openPharmacistForm" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../assets/dashboard.jpg-1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#openSellMedicineForm" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../assets/sellMedicine.jpg.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="10.0" layoutY="109.0" onMouseClicked="#logOutOnAction" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/logOutLogo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="73.0" layoutY="25.0" prefHeight="327.0" prefWidth="151.0" spacing="20.0">
+                     <children>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" onMouseClicked="#openPharmacistForm" prefHeight="62.0" prefWidth="139.0" text="Dashboard" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="15.0" layoutY="20.0" onMouseClicked="#openSellMedicineForm" prefHeight="62.0" prefWidth="139.0" text="OrderDetails" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="112.0" onMouseClicked="#logOutOnAction" prefHeight="62.0" prefWidth="137.0" text="Exit" underline="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="182.0" fitWidth="200.0" layoutX="10.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

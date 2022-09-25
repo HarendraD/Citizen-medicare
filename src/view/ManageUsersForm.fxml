@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadContext" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageUsersFormController">
+   <children>
+      <BorderPane prefHeight="229.0" prefWidth="245.0">
+         <top>
+            <AnchorPane prefHeight="40.0" prefWidth="1280.0" style="-fx-background-color: #78f1f5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="84.0" layoutY="7.0" prefHeight="48.0" prefWidth="402.0" text="CITIZENS MEDICARE" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="35.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="lblTime" alignment="CENTER" layoutX="1139.0" layoutY="10.0" prefHeight="35.0" prefWidth="128.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" alignment="CENTER" layoutX="959.0" layoutY="10.0" prefHeight="35.0" prefWidth="159.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="9.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1205.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="706.0" layoutY="9.0" prefHeight="635.0" prefWidth="342.0" style="-fx-border-color: #c5d8eb; -fx-background-color: white; -fx-border-width: 2;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="706.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="56.0" layoutY="22.0" prefHeight="31.0" prefWidth="231.0" text="Add User">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#db0000" />
+                                    <Stop color="#5611cd" offset="0.37254901960784315" />
+                                    <Stop color="#db0000" offset="0.7287581699346406" />
+                                    <Stop color="#2831fa" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="32.0" layoutY="113.0" prefHeight="383.0" prefWidth="279.0" spacing="35.0">
+                           <children>
+                              <JFXTextField fx:id="txtUserId" labelFloat="true" onKeyReleased="#checkUsers" prefHeight="45.0" prefWidth="284.0" promptText="User ID">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txtUserName" labelFloat="true" onKeyReleased="#checkUsers" prefHeight="45.0" prefWidth="284.0" promptText="User Name">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txtPassword" labelFloat="true" onKeyReleased="#checkUsers" prefHeight="45.0" prefWidth="284.0" promptText="Password">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txtUserRole" labelFloat="true" onKeyReleased="#checkUsers" prefHeight="45.0" prefWidth="284.0" promptText="User Role">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </VBox>
+                        <JFXButton fx:id="btnSaveUser" alignment="CENTER" buttonType="RAISED" layoutX="109.0" layoutY="533.0" onMouseClicked="#saveUserOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #0c2b99;" text="Save" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="635.0" prefWidth="686.0" style="-fx-background-color: white; -fx-border-color: #c5d8eb; -fx-border-width: 2;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="362.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Label layoutX="241.0" layoutY="26.0" prefHeight="43.0" prefWidth="203.0" text="User Details">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#fc2301" />
+                                    <Stop color="#3707d9" offset="0.3366013071895425" />
+                                    <Stop color="#d90798" offset="0.630718954248366" />
+                                    <Stop color="#1c07d9" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <TableView fx:id="tblUsers" layoutX="26.0" layoutY="80.0" prefHeight="462.0" prefWidth="615.0" stylesheets="@../lib/css/table2.css" AnchorPane.bottomAnchor="101.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="80.0">
+                           <columns>
+                              <TableColumn fx:id="colUserId" prefWidth="134.0" text="User ID" />
+                              <TableColumn fx:id="colUserName" prefWidth="153.0" text="User Name" />
+                              <TableColumn fx:id="colPassword" prefWidth="179.0" text="Password" />
+                              <TableColumn fx:id="colUserRole" prefWidth="170.0" text="UserRole" />
+                           </columns>
+                        </TableView>
+                        <JFXButton alignment="CENTER_RIGHT" buttonType="RAISED" layoutX="507.0" layoutY="555.0" onMouseClicked="#deleteUser" prefHeight="57.0" prefWidth="150.0" style="-fx-background-color: #ad0202;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </JFXButton>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" layoutX="521.0" layoutY="597.0" onMouseClicked="#deleteUser" size="40" />
+                     </children>
+                  </AnchorPane>
+                  <ImageView disable="true" fitHeight="560.0" fitWidth="617.0" layoutX="63.0" layoutY="25.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/useres.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </center>
+         <left>
+            <AnchorPane fx:id="pane2" prefHeight="660.0" prefWidth="223.0" style="-fx-background-color: #a1d0f7;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="49.0" layoutY="18.0" prefHeight="571.0" prefWidth="125.0" spacing="20.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="18.0">
+                     <children>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" onMouseClicked="#openHomeForm" prefHeight="54.0" prefWidth="193.0" text="Home">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="30.0" onMouseClicked="#openManageDoctorForm" prefHeight="53.0" prefWidth="195.0" text="Doctors">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="123.0" onMouseClicked="#openManageNurseForm" prefHeight="53.0" prefWidth="196.0" text="Nurses">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="196.0" onMouseClicked="#openManageMedicineForm" prefHeight="53.0" prefWidth="201.0" text="Medicines">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="269.0" onMouseClicked="#openReportsForm" prefHeight="53.0" prefWidth="194.0" text="Reports">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="342.0" onMouseClicked="#openManageUsers" prefHeight="53.0" prefWidth="198.0" text="Users">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="441.0" onMouseClicked="#logOutButton" prefHeight="53.0" prefWidth="198.0" text="Exit">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="488.0" prefWidth="74.0" AnchorPane.topAnchor="22.0">
+                     <children>
+                        <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openHomeForm" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/home.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageDoctorForm" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/ManageDoctorLogo.jpg.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageNurseForm" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/nurseLogo.jpg.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageMedicineForm" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/medicineLogo.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openReportsForm" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/reportsLogo.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="51.0" onMouseClicked="#openManageUsers" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/manageUsersEdit.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="51.0" layoutX="26.0" layoutY="445.0" onMouseClicked="#logOutButton" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/logOutLogo.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="66.0" fitWidth="106.0" layoutX="68.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadContext" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageChannelFormController">
+   <children>
+      <BorderPane prefHeight="229.0" prefWidth="245.0">
+         <top>
+            <AnchorPane prefHeight="40.0" prefWidth="1280.0" style="-fx-background-color: #78f1f5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="84.0" layoutY="7.0" prefHeight="48.0" prefWidth="402.0" text="CITIZENS MEDICARE" textOverrun="CENTER_WORD_ELLIPSIS" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="35.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="lblTime" alignment="CENTER" layoutX="1139.0" layoutY="10.0" prefHeight="35.0" prefWidth="128.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" alignment="CENTER" layoutX="959.0" layoutY="10.0" prefHeight="35.0" prefWidth="159.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="54.0" fitWidth="66.0" layoutX="9.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1205.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="650.0" prefWidth="246.0" style="-fx-background-color: #a1d0f7;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="26.0" layoutY="40.0" prefHeight="362.0" prefWidth="76.0" spacing="20.0" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="144.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="61.0" onMouseClicked="#openReceptionDashBoardForm" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/home.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="55.0" fitWidth="61.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#openManagePatients" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/AddPatient.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="55.0" fitWidth="61.0" layoutX="20.0" layoutY="115.0" onMouseClicked="#openManageChannelsForm" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/channel.jpg.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="55.0" fitWidth="61.0" layoutX="20.0" layoutY="210.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/logOutLogo.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="75.0" layoutY="40.0" prefHeight="362.0" prefWidth="157.0" spacing="20.0" AnchorPane.bottomAnchor="248.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" onMouseClicked="#openReceptionDashBoardForm" prefHeight="56.0" prefWidth="138.0" text="DashBoard">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="20.0" layoutY="20.0" onMouseClicked="#openManagePatients" prefHeight="56.0" prefWidth="141.0" text="Patients">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="20.0" layoutY="116.0" onMouseClicked="#openManageChannelsForm" prefHeight="56.0" prefWidth="145.0" text="Channels">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="20.0" layoutY="212.0" onMouseClicked="#backToMain" prefHeight="56.0" prefWidth="145.0" text="Exit">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="170.0" fitWidth="200.0" layoutX="10.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <image>
+                        <Image url="@../assets/LogoFinal.PNG" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="628.0" prefWidth="746.0" style="-fx-background-color: white; -fx-border-color: #c5d8eb; -fx-border-width: 2;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="279.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <TableView fx:id="tblChannel" layoutX="6.0" layoutY="96.0" prefHeight="427.0" prefWidth="722.0" stylesheets="@../lib/css/table2.css" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="96.0">
+                           <columns>
+                              <TableColumn fx:id="colId" prefWidth="92.0" text="Channel ID" />
+                              <TableColumn fx:id="colPatientId" prefWidth="106.0" text="Patient ID" />
+                              <TableColumn fx:id="colDoctorId" prefWidth="103.0" text="Doctor ID" />
+                              <TableColumn fx:id="colDoctorSpeciality" prefWidth="137.0" text="Doctor Speciality" />
+                              <TableColumn fx:id="colNurseId" prefWidth="92.0" text="Nurse ID" />
+                              <TableColumn fx:id="colTime" prefWidth="102.0" text="Time " />
+                              <TableColumn fx:id="colFee" prefWidth="94.0" text="Fee" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="260.0" layoutY="15.0" prefHeight="43.0" prefWidth="223.0" text="Channel Details">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#fc2301" />
+                                    <Stop color="#3707d9" offset="0.3366013071895425" />
+                                    <Stop color="#d90798" offset="0.630718954248366" />
+                                    <Stop color="#1c07d9" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <JFXButton alignment="CENTER_RIGHT" layoutX="580.0" layoutY="556.0" onMouseClicked="#deleteSelectedChannel" prefHeight="58.0" prefWidth="152.0" style="-fx-background-color: #a60a17;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="TRASH" onMouseClicked="#deleteSelectedChannel" size="40" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="762.0" layoutY="14.0" prefHeight="600.0" prefWidth="253.0" style="-fx-border-color: #b5c3f5; -fx-border-width: 2; -fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="53.0" layoutY="6.0" prefHeight="34.0" prefWidth="147.0" text="Add Channel">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#db0000" />
+                                    <Stop color="#5611cd" offset="0.37254901960784315" />
+                                    <Stop color="#db0000" offset="0.7287581699346406" />
+                                    <Stop color="#2831fa" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="27.0" layoutY="56.0" prefHeight="464.0" prefWidth="212.0" spacing="35.0">
+                           <children>
+                              <JFXTextField fx:id="txtChannelId" labelFloat="true" onKeyReleased="#checkChannel" prefHeight="45.0" prefWidth="284.0" promptText="Channel ID">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXComboBox fx:id="cmbPatientId" prefHeight="46.0" prefWidth="309.0" promptText="Patient ID">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </JFXComboBox>
+                              <JFXComboBox fx:id="cmbDoctorId" layoutX="10.0" layoutY="95.0" prefHeight="46.0" prefWidth="312.0" promptText="Doctor ID">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </JFXComboBox>
+                              <JFXTextField fx:id="txtSpeciality" labelFloat="true" layoutX="15.0" layoutY="338.0" onKeyReleased="#checkChannel" prefHeight="45.0" prefWidth="284.0" promptText="Speciality">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXComboBox fx:id="cmbNurseId" layoutX="10.0" layoutY="176.0" prefHeight="46.0" prefWidth="308.0" promptText="Nurse ID">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </JFXComboBox>
+                              <JFXTextField fx:id="txtFee" labelFloat="true" onKeyReleased="#checkChannel" prefHeight="45.0" prefWidth="284.0" promptText="Fee ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </VBox>
+                        <JFXButton fx:id="btnSaveChannel" layoutX="64.0" layoutY="534.0" onMouseClicked="#saveChannelOnAction" prefHeight="65.0" prefWidth="125.0" style="-fx-background-color: #0c2b99;" text="Save" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="599.0" style="-fx-background-radius: 20; -fx-background-color: #e9eaf5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddMedicineFormController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <AnchorPane prefHeight="40.0" prefWidth="543.0" style="-fx-background-color: #60d8eb; -fx-border-color: #3466fa; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="185.0" layoutY="5.0" prefHeight="36.0" prefWidth="229.0" text="ADD MEDICINE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="27.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="633.0" prefWidth="543.0" style="-fx-background-color: #c3e6e0; -fx-border-width: 2; -fx-border-color: #18d9b9;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="496.0" fitWidth="610.0" layoutX="52.0" layoutY="11.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/medicineBack.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="txtSize" labelFloat="true" layoutX="88.0" layoutY="286.0" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Size(mg/ml)" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtType" labelFloat="true" layoutX="88.0" layoutY="211.0" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Type" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="88.0" layoutY="134.0" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Description" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtId" labelFloat="true" layoutX="88.0" layoutY="62.0" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Medicine ID" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="88.0" layoutY="425.0" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Qty" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <AnchorPane layoutX="89.0" layoutY="362.0" prefHeight="52.0" prefWidth="421.0" style="-fx-border-color: #020a1a; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1;">
+                     <children>
+                        <JFXComboBox fx:id="cmbSupplierId" labelFloat="true" layoutX="15.0" layoutY="6.0" prefHeight="41.0" prefWidth="391.0" promptText="Supplier ID" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="4.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </JFXComboBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="240.0" layoutY="596.0" prefHeight="97.0" prefWidth="119.0">
+                     <children>
+                        <JFXButton fx:id="btnSaveMedicine" layoutX="8.0" layoutY="39.0" onMouseClicked="#saveMedicineDetails" prefHeight="67.0" prefWidth="107.0" text="Save">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="50.0" fitWidth="84.0" layoutX="43.0" layoutY="14.0" onMouseClicked="#saveMedicineDetails" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashBoardImages/i/medicineLogo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="89.0" layoutY="494.0" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Price" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

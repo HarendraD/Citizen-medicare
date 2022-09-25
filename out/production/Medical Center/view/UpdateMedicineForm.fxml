@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="791.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateMedicineFormController">
+   <children>
+      <BorderPane layoutX="5.0" layoutY="5.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="40.0" prefWidth="543.0" style="-fx-background-color: #60d8eb; -fx-border-color: #3466fa; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="143.0" layoutY="5.0" prefHeight="36.0" prefWidth="297.0" text="UPDATE  MEDICINE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="27.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#610b29" />
+                              <Stop color="#83167c" offset="0.3431372549019608" />
+                              <Stop color="#096b1b" offset="0.5980392156862745" />
+                              <Stop color="#2f29c3" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="683.0" prefWidth="583.0" style="-fx-background-color: #c3e6e0; -fx-border-width: 2; -fx-border-color: #18d9b9;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="501.0" fitWidth="526.0" layoutX="49.0" layoutY="14.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/medicineBack.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="224.0" layoutY="618.0" prefHeight="114.0" prefWidth="136.0">
+                     <children>
+                        <JFXButton fx:id="btnUpdateMedicine" layoutX="14.0" layoutY="55.0" onMouseClicked="#updateMedicineDetails" prefHeight="49.0" prefWidth="108.0" text="Update">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="62.0" fitWidth="67.0" layoutX="35.0" layoutY="10.0" onMouseClicked="#updateMedicineDetails" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/modifyEdit.jpg.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <VBox layoutX="52.0" layoutY="35.0" prefHeight="593.0" prefWidth="480.0" spacing="25.0">
+                     <children>
+                        <JFXTextField fx:id="txtId" labelFloat="true" onAction="#loadMedicineDetails" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Medicine ID" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtDescription" editable="false" labelFloat="true" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Description" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtSize" editable="false" labelFloat="true" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Size(mg/ml)" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtType" editable="false" labelFloat="true" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Type" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtSupplierId" editable="false" labelFloat="true" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Supplier ID" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtSupplierName" editable="false" labelFloat="true" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Supplier Name" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtQty" labelFloat="true" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Qty" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtPrice" labelFloat="true" onKeyPressed="#checkMedicine" onKeyReleased="#checkMedicine" prefHeight="48.0" prefWidth="423.0" promptText="Price" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 1; -fx-border-color: #020a1a;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
